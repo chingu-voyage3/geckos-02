@@ -1,0 +1,12 @@
+/*
+==========================
+COLORS
+==========================
+*/
+
+$test-red: purple;
+
+
+@mixin test-link($color) {
+    color: $color;
+}

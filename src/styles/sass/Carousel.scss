@@ -1,0 +1,15 @@
+
+
+/*
+==========================
+IMPORT PARTIAL SASS FILES
+==========================
+*/
+
+
+@import "variables"; //standard variables throughout project
+
+
+.red-test {
+  @include test-link($test-red);
+}
