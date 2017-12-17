@@ -6,9 +6,6 @@ import CarouselToggle from '../carousel/CarouselToggle'
 import CarouselSlide from '../carousel/CarouselSlide'
 import '../../styles/Carousel.css';
 
-// import  from "react-bootstrap"
-
-
 const CarouselWrapper = styled.div`
   position: relative;
   opacity: 1;
