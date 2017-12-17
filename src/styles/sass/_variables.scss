@@ -4,10 +4,9 @@ COLORS
 ==========================
 */
 
-$test-red: red;
+$aqua: #00c2bb;
 
 
-@mixin test-link($color) {
+@mixin aqua($color) {
     color: $color;
 }
-

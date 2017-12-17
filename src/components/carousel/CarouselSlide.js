@@ -7,7 +7,7 @@ const CarouselSlideContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  max-height: 100vh;
+  max-height: calc(100vh - 3em);
   background-color: #FFF;
   overflow: hidden;
   z-index: 1;
@@ -30,10 +30,18 @@ const CarouselContentContainer = styled.div`
 `;
 
 const CarouselContentText = styled.p`
-  font-family: 'Roboto', arial, sans-serif;
-  font-size: 1em;
-  color: #FFF;
+  font-family: arial, sans-serif;
+  font-size: ${(props) => props.desc ? '1.5em' : '3em'};
+  color: ${(props) => props.desc ? '#C4C4C4' : '#FFF'};
   margin: 10px;
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.desc ? '1em' : '1.5em'};
+  }
+
+  @media (max-width: 470px) {
+      display: ${(props) => props.desc ? 'none' : 'block'};
+    }
 `;
 
 const CarouselLink = styled.a`
@@ -42,49 +50,46 @@ const CarouselLink = styled.a`
   color: #FFF;
   padding: 10px;
   margin-top: 5%;
+  margin-left: 10px;
   border: 1px solid #00c2bb;
   border-radius: 3px;
   background: #00c2bb;
+  font-family: arial, sans-serif;
+  font-size: 1em;
   transition: 0.3s;
 
   &:hover {
-    background: rgba(0,194,187,0.6);
+    background: #fff;
     border: 1px solid transparent;
-    color: #FFF;
+    color: #00c2bb;
     transition: 0.3s;
   }
-`;
 
-const CurrentSlide = styled.li`
-  display: ${(props) => props.activeIndex ? 'block' : 'none'};
-  margin: 0 auto;
-  position: relative;
-  width: 100vw;
-  list-style-type: none;
-  text-align: center;
- `;
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding: 5px;
+  }
+
+  @media (max-width: 376px) {
+    font-size: 0.5em;
+  }
+`;
 
 class CarouselSlide extends React.Component {
   render() {
     return (
-      <CurrentSlide activeIndex>
+      <li className={this.props.index === this.props.activeIndex ? "current-slide current-slide-active" : "current-slide"}>
         <CarouselSlideContainer>
           <CarouselImg src={this.props.slide.img} />
           <CarouselContentContainer>
-            <CarouselContentText>
-                {this.props.slide.info}
-            </CarouselContentText>
-            <CarouselContentText>
-              {this.props.slide.description}
-            </CarouselContentText>
-            <CarouselContentText>
+            <CarouselContentText>{this.props.slide.info}</CarouselContentText>
+            <CarouselContentText desc>{this.props.slide.description}</CarouselContentText>
               <CarouselLink href={this.props.slide.link}>
-                {this.props.slide.link}
+                {this.props.slide.linktag}
               </CarouselLink>
-            </CarouselContentText>
           </CarouselContentContainer>
         </CarouselSlideContainer>
-      </CurrentSlide>
+      </li>
     );
   }
 }

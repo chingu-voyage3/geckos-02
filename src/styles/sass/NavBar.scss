@@ -8,11 +8,14 @@ IMPORT PARTIAL SASS FILES
 
 @import "variables"; //standard variables throughout project
 
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 3em;
 
-.test-sass-link {
-  @include test-link($test-red);
+  background-color: #141414;
+  font-family: arial, sans-serif;
 }
-
-
-
-

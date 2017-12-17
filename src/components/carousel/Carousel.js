@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import NavLeft from '../carousel/NavLeft'
 import NavRight from '../carousel/NavRight'
-import NavToggle from '../carousel/NavToggle'
+import CarouselToggle from '../carousel/CarouselToggle'
 import CarouselSlide from '../carousel/CarouselSlide'
+import '../../styles/Carousel.css';
+
 // import  from "react-bootstrap"
 
 
@@ -12,6 +13,10 @@ const CarouselWrapper = styled.div`
   position: relative;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
 `;
 
 const CarouselSlideBox = styled.ul`
@@ -25,18 +30,16 @@ const SlideToggleWrapper = styled.ul`
   justify-content: center;
   align-items: center;
   padding-top: 10px;
+  margin: 0;
   position: absolute;
-  width: 100vw;
+  left: 0;
+  right: 0;
   bottom: 5%;
   list-style-type: none;
 `;
 
 // Carousel wrapper component
 class Carousel extends React.Component {
-  static propTypes = {
-    slides: PropTypes.array.isRequired,
-  };
-
   constructor(props) {
     super(props);
 
@@ -70,8 +73,7 @@ class Carousel extends React.Component {
 
     this.setState({
       activeIndex: index
-
-    }, console.log("this is the index ", index));
+    });
   }
 
   goToNextSlide(e) {
@@ -110,7 +112,7 @@ class Carousel extends React.Component {
 
         <SlideToggleWrapper>
           {this.props.slides.map((slide, index) => (
-            <NavToggle
+            <CarouselToggle
               key={index}
               index={index}
               activeIndex={this.state.activeIndex}
@@ -121,32 +123,6 @@ class Carousel extends React.Component {
         </SlideToggleWrapper>
       </CarouselWrapper>
     );
-
-//     return(
-//       <Carousel>
-//   <Carousel.Item>
-//     <img width={900} height={500} alt="900x500" src="/assets/carousel.png" />
-//     <Carousel.Caption>
-//       <h3>First slide label</h3>
-//       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//   <Carousel.Item>
-//     <img width={900} height={500} alt="900x500" src="/assets/carousel.png" />
-//     <Carousel.Caption>
-//       <h3>Second slide label</h3>
-//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//   <Carousel.Item>
-//     <img width={900} height={500} alt="900x500" src="/assets/carousel.png" />
-//     <Carousel.Caption>
-//       <h3>Third slide label</h3>
-//       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-// </Carousel>
-// );
   }
 }
 
