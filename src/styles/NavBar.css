@@ -8,6 +8,11 @@ IMPORT PARTIAL SASS FILES
 COLORS
 ==========================
 */
+/*
+===============================
+here starts the hamburger navbar
+===============================
+*/
 @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 * {
   margin: 0;
@@ -114,7 +119,8 @@ a:hover {
 
 .nav > li > a:hover {
   padding-left: 15px;
-  color: #fff; }
+  color: #fff;
+  color: red; }
 
 .nav > li:last-child > a {
   border-radius: 0 0 10px 0; }
