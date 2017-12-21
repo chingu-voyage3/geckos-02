@@ -5,6 +5,14 @@ IMPORT PARTIAL SASS FILES
 ==========================
 */
 
+// example
+// /* whole body under the main heading */
+// .Todos-Body {
+//     color: $default-grey;
+//     font-size: 12px;
+//     @include tab-body($bkg-grey);
+// }
+
 
 @import "variables"; //standard variables throughout project
 
@@ -143,9 +151,9 @@ a:hover{
 @media(min-width:770px){
   .navbar{
   height:60px;
-  background:linear-gradient(#5a8eee, #4066e8);
-  background:-webkit-linear-gradient(#5a8eee, #4066e8);
-  background:-moz-linear-gradient(#5a8eee, #4066e8);
+  background:linear-gradient($nav-main-background-top, $nav-main-background-bottom);
+  background:-webkit-linear-gradient($nav-main-background-top, $nav-main-background-bottom);
+  background:-moz-linear-gradient($nav-main-background-top, $nav-main-background-bottom);
   font-family:arial;
  
 }
@@ -188,10 +196,10 @@ a:hover{
     border: none;
   }
   .nav > li > a:hover{
-  background:-webkit-linear-gradient(#d9e2f9, #becdf6);
-  background:-moz-linear-gradient(#d9e2f9, #becdf6);
-  background:linear-gradient(#d9e2f9, #becdf6);
-  color: #4066e8;
+  background:-webkit-linear-gradient($nav-background-hover-top-links-top, $nav-background-hover-top-links-bottom);
+  background:-moz-linear-gradient($nav-background-hover-top-links-top, $nav-background-hover-top-links-bottom);
+  background:linear-gradient($nav-background-hover-top-links-top, $nav-background-hover-top-links-bottom);
+  color: $nav-font-color-links;
  }
   
 }

@@ -7,6 +7,33 @@ COLORS
 $aqua: #00c2bb;
 
 
+/*
+--------------------------
+NAV bar
+--------------------------
+*/
+
+// links About - Community - My City News - Events - Donate
+
+
+// colors for the large screen.
+// TODO I will have to change the variable names to adapt to the different 
+// media queries I guess..
+
+// gradient colors
+$nav-background-hover-top-links-top: #d9e2f9;
+$nav-background-hover-top-links-bottom: #becdf6;
+
+// font color
+$nav-font-color-links: #4066e8;
+
+// gradient colors
+$nav-main-background-top: #5a8eee;
+$nav-main-background-bottom: #4066e8;
+
+
+
+
 @mixin aqua($color) {
     color: $color;
 }
