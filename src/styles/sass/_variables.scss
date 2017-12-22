@@ -4,9 +4,65 @@ COLORS
 ==========================
 */
 
-$aqua: #00c2bb;
 
 
-@mixin aqua($color) {
-    color: $color;
-}
+/*
+--------------------------
+NAV bar
+--------------------------
+*/
+
+
+
+
+/*
+    *** Mobile screen ***
+*/
+
+
+// gradient colors - main nav
+$mobile-nav-main-background-top: #5b5c60;
+$mobile-nav-main-background-bottom: #0f1010;
+
+$color-main-title-text: #e5e7ee;
+$color-main-title-text-hover: #fff;
+
+
+// gradient colors - hamburger button
+$color-hamburger-button-grad-top: #535458;
+$color-hamburger-button-grad-buttom: #1c1d1e;
+
+$color-hamburger-button-hover: #38393b;
+$color-hamburger-button-active: #1c1d1e;
+$color-hamburger-button-stripes: #6e7074;
+
+$color-hamburger-drop-down-background: #404343;
+$color-hamburger-drop-down-background-hover: #2d2f2f;
+
+$color-hamburger-drop-down-text: #ccc;
+$color-hamburger-drop-down-text-hover: #fff;
+
+$color-hamburger-drop-down-border: #0f1010;
+$color-hamburger-drop-down-border-top: #353737;
+$color-hamburger-drop-down-border-bottom: #5e6262;
+
+
+
+
+/*
+    *** Large screen ***
+*/
+
+
+// gradient colors - main nav
+$media770-nav-main-background-top: #5a8eee;
+$media770-nav-main-background-bottom: #4066e8;
+
+// gradient colors links: About - Community - My City News - Events - Donate
+$media770-nav-background-hover-top-links-top: #d9e2f9;
+$media770-nav-background-hover-top-links-bottom: #becdf6;
+
+// font color
+$media770-color-nav-links-text: #4066e8;
+
+

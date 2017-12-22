@@ -29,13 +29,13 @@ a{
   text-decoration:none;
 }
 a:hover{
-  color:#fff;
+  color: $color-main-title-text-hover;
 }
 .navbar{
   height:60px;
-  background:linear-gradient(#5b5c60, #0f1010);
-  background:-webkit-linear-gradient(#5b5c60, #0f1010);
-  background:-moz-linear-gradient(#5b5c60, #0f1010);
+  background:linear-gradient($mobile-nav-main-background-top, $mobile-nav-main-background-bottom);
+  background:-webkit-linear-gradient($mobile-nav-main-background-top, $mobile-nav-main-background-bottom);
+  background:-moz-linear-gradient($mobile-nav-main-background-top, $mobile-nav-main-background-bottom);
   font-family:arial;
  }
 .contaier{
@@ -46,7 +46,7 @@ a:hover{
 }
 .navbar-brand{
   font-family: 'Lily Script One', arial;
-  color:#e5e7ee;
+  color: $color-main-title-text;
   padding:0 20px 0px 20px;
   height: 60px;
   line-height: 60px;
@@ -64,19 +64,19 @@ a:hover{
   border-radius: 5px;
   margin-left: 10px;
   margin-top: 10px;
-  background: linear-gradient(#535458, #1c1d1e);
-  background: -webkit-linear-gradient(#535458, #1c1d1e);
-  background: -moz-linear-gradient(#535458, #1c1d1e);
+  background: linear-gradient($color-hamburger-button-grad-top, $color-hamburger-button-grad-buttom);
+  background: -webkit-linear-gradient($color-hamburger-button-grad-top, $color-hamburger-button-grad-buttom);
+  background: -moz-linear-gradient($color-hamburger-button-grad-top, $color-hamburger-button-grad-buttom);
   border: 1px solid rgba(0,0,0, 0.3);
   box-shadow: 0 1px 1px rgba(255,255,255, 0.3) ,
               inset 0 2px 1px rgba(255,255,255, 0.3);
   cursor: pointer;
 }
 .toggle:hover{
-  background: #38393b;
+  background: $color-hamburger-button-hover;
 }
 .toggle:active{
-  background: #1c1d1e;
+  background: $color-hamburger-button-active;
   box-shadow: 0 1px 1px rgba(255,255,255, 0.3) ,
               inset 0 2px 1px rgba(0,0,0, 0.9);
 }
@@ -88,14 +88,14 @@ a:hover{
   border-radius: 2px;
   height: 5px;
   width: 34px;
-  background: #6e7074;
+  background: $color-hamburger-button-stripes;
   margin: auto;
   margin-bottom: 3px;
 }
 .navcollaps{
-  height:0;
-  overflow:hidden;
-  background:#0f1010;
+  height: 0;
+  overflow: hidden;
+  background: $color-hamburger-drop-down-border;
   padding: 0 5px;
   width: 150px;
   transition:height .5s;
@@ -109,30 +109,30 @@ a:hover{
   padding-top: 5px;
 }
 .nav > li{
-    list-style:none;
-    display: block;
+  list-style:none;
+  display: block;
 }
 
 .nav > li > a{
-    padding:10px 10px;
-    margin-left: 5px;
-    line-height:30px;
-    background: #404343;
-    color:#ccc;
-    display: block;
-    border-top: 1px solid #353737;
-    border-bottom: 1px solid #5e6262;
-    transition:padding-left 0.3s;
+  padding:10px 10px;
+  margin-left: 5px;
+  line-height:30px;
+  background: $color-hamburger-drop-down-background;
+  color: $color-hamburger-drop-down-text;
+  display: block;
+  border-top: 1px solid $color-hamburger-drop-down-border-top;
+  border-bottom: 1px solid $color-hamburger-drop-down-border-bottom;
+  transition:padding-left 0.3s;
  }
  .nav > li > a:hover{
   padding-left: 15px;
-  color: #fff;
+  color: $color-hamburger-drop-down-text-hover;
  }
  .nav > li:last-child > a{
   border-radius: 0 0 10px 0;
  }
  .nav > li > a:hover{
-  background: #2d2f2f;
+  background: $color-hamburger-drop-down-background-hover;
  }
 
 
@@ -143,9 +143,9 @@ a:hover{
 @media(min-width:770px){
   .navbar{
   height:60px;
-  background:linear-gradient(#5a8eee, #4066e8);
-  background:-webkit-linear-gradient(#5a8eee, #4066e8);
-  background:-moz-linear-gradient(#5a8eee, #4066e8);
+  background:linear-gradient($media770-nav-main-background-top, $media770-nav-main-background-bottom);
+  background:-webkit-linear-gradient($media770-nav-main-background-top, $media770-nav-main-background-bottom);
+  background:-moz-linear-gradient($media770-nav-main-background-top, $media770-nav-main-background-bottom);
   font-family:arial;
  
 }
@@ -188,10 +188,10 @@ a:hover{
     border: none;
   }
   .nav > li > a:hover{
-  background:-webkit-linear-gradient(#d9e2f9, #becdf6);
-  background:-moz-linear-gradient(#d9e2f9, #becdf6);
-  background:linear-gradient(#d9e2f9, #becdf6);
-  color: #4066e8;
+  background:-webkit-linear-gradient($media770-nav-background-hover-top-links-top, $media770-nav-background-hover-top-links-bottom);
+  background:-moz-linear-gradient($media770-nav-background-hover-top-links-top, $media770-nav-background-hover-top-links-bottom);
+  background:linear-gradient($media770-nav-background-hover-top-links-top, $media770-nav-background-hover-top-links-bottom);
+  color: $media770-color-nav-links-text;
  }
   
 }
