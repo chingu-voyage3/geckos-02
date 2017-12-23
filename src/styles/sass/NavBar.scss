@@ -184,7 +184,7 @@ a:hover{
   .nav > li > a{
     border-radius: 5px !important;
     background: transparent;
-    padding:0 15px;
+    padding:0 10px;
     border: none;
   }
   .nav > li > a:hover{
@@ -201,11 +201,6 @@ a:hover{
   }
 }
 
-@media(min-width:1200px){
-  .contaier{
-    width:1170px;
-  }
-}
 
 .show{
   height:270px;
