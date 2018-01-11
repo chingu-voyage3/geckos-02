@@ -1,12 +1,39 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const DonatePageContainer = styled.div`
-  margin: 10px;
+const DonatePageBanner = styled.div`
+  background: #f7f7f7;
+  height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AmountSelection = styled.button`
+  width: 10vw;
+  height: 50px;
+  margin: 20px;
+
+  border: 2px solid black;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 120px;
+  }
+
+  &:hover {
+    color: white;
+    background: black;
+  }
 `;
 
 const DonorInformation = styled.div`
-  margin-bottom: 100px;
+  max-width: 800px;
+  margin: 50px auto;
 `;
 
 const DonorInfoTitle = styled.h2`
@@ -14,6 +41,24 @@ const DonorInfoTitle = styled.h2`
   max-width: 800px;
   padding: 0px 0px 10px 10px;
   margin: 10px;
+
+  ${props => props.mainHeader && css`
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 50px auto;
+    height: 12vh;
+    font-size: 4em;
+
+    @media (max-width: 768px) {
+      font-size: 3em;
+    }
+
+    @media (max-width: 470px) {
+      font-size: 2em;
+    }
+  `}
 `;
 
 const DonorInfoForm = styled.form`
@@ -48,13 +93,22 @@ const FormInput = styled.input`
       width: 100%;
     }
   `}
+
+  ${props => props.cvv && css`
+    width: 100px;
+  `}
 `;
 
 const MakeRow = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin: 5px 0px;
+
+  ${props => props.bannerButtons && css`
+    flex-wrap: wrap;
+  `}
 `;
 
 const FormLabel = styled.span`
@@ -66,11 +120,36 @@ const FormSelection = styled.select `
   margin-right: 5px;
 `;
 
-const DonatePage = () => (
-  <DonatePageContainer>
-    <h1>Donate Page</h1>
+const SubmitDonation = styled.button`
+  width: 150px;
+  height: 50px;
+  margin: 20px;
 
-    <p>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;</p>
+  border: 2px solid black;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+
+  &:hover {
+    color: white;
+    background: black;
+  }
+`;
+
+const DonatePage = () => (
+  <div>
+    <DonatePageBanner>
+      <MakeRow bannerButtons>
+        <AmountSelection>$25</AmountSelection>
+        <AmountSelection>$50</AmountSelection>
+        <AmountSelection>$100</AmountSelection>
+        <AmountSelection>$200</AmountSelection>
+        <AmountSelection>$500</AmountSelection>
+        <AmountSelection>Other</AmountSelection>
+      </MakeRow>
+    </DonatePageBanner>
+    <DonorInfoTitle mainHeader>Support Us Today</DonorInfoTitle>
 
     <DonorInformation>
       <DonorInfoTitle>Donor Information</DonorInfoTitle>
@@ -134,11 +213,15 @@ const DonatePage = () => (
         </MakeRow>
         <MakeRow>
           <FormLabel>CVV Number</FormLabel>
-          <FormInput type="text" placeholder="CVV" />
+          <FormInput cvv type="text" placeholder="CVV" />
+        </MakeRow>
+        <MakeRow>
+          <SubmitDonation>Donate</SubmitDonation>
+          <span>(Show Amount Selected Here)</span>
         </MakeRow>
       </DonorInfoForm>
     </DonorInformation>
-  </DonatePageContainer>
+  </div>
 );
 
 export default DonatePage;
