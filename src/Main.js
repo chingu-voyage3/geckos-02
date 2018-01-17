@@ -7,7 +7,7 @@ import EventsPage from './components/pages/EventsPage';
 import DonatePage from './components/pages/DonatePage';
 
 // The Main component renders one of the five provided
-// Routes (provided that one matches). 
+// Routes (provided that one matches).
 
 const Main = () => (
   <main>
